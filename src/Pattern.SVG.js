@@ -28,7 +28,8 @@ L.Pattern = L.Pattern.extend({
 
 		if (!dom) { return; }
 
-		dom.setAttribute('id', L.stamp(this));
+		dom.setAttribute('id', options.id !== "" ? options.id : L.stamp(this));
+        dom.setAttribute('class', options.className);
 		dom.setAttribute('x', options.x);
 		dom.setAttribute('y', options.y);
 		dom.setAttribute('width', options.width);

@@ -6,6 +6,8 @@ L.Pattern = L.Class.extend({
 	includes: [L.Mixin.Events],
 
 	options: {
+		id: "",
+		className: "",
 		x: 0,
 		y: 0,
 		width: 8,
@@ -21,6 +23,7 @@ L.Pattern = L.Class.extend({
 
 	initialize: function (options) {
 		this._shapes = {};
+
 		L.setOptions(this, options);
 	},
 

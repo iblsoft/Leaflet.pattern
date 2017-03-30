@@ -11,6 +11,8 @@ L.Pattern = L.Class.extend({
 	includes: [L.Mixin.Events],
 
 	options: {
+		id: "",
+		className: "",
 		x: 0,
 		y: 0,
 		width: 8,
@@ -26,6 +28,7 @@ L.Pattern = L.Class.extend({
 
 	initialize: function (options) {
 		this._shapes = {};
+
 		L.setOptions(this, options);
 	},
 
@@ -168,7 +171,8 @@ L.Pattern = L.Pattern.extend({
 
 		if (!dom) { return; }
 
-		dom.setAttribute('id', L.stamp(this));
+		dom.setAttribute('id', options.id !== "" ? options.id : L.stamp(this));
+        dom.setAttribute('class', options.className);
 		dom.setAttribute('x', options.x);
 		dom.setAttribute('y', options.y);
 		dom.setAttribute('width', options.width);
